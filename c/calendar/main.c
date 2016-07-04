@@ -204,7 +204,8 @@ void calendar(int year, int month,int day, int num_days, int date)
 {
 	int i;
 	printf("\n S   M   T   W   T   F   S");
-
+	
+	//print spaces depending on first day of the month
 	if(day==2)
 		printf("\n%*s", 4, "");
 	else if(day==3)
@@ -245,27 +246,27 @@ void calendar(int year, int month,int day, int num_days, int date)
 
 main()
 {
-	int i, days, months, years, NumOfDays, what_day, m_code, first;
+	int i, day, month, year, NumOfDays, what_day, m_code, first;
 	system("color 70");
 	
 	while(1)
 	{
-		years = input_year();
+		year = input_year();
 		if(years == 0)
 			break;
 		
-		months = input_month();
+		month = input_month();
 		
-		NumOfDays = days_of_month(years, months);
+		NumOfDays = days_of_month(year, month);
 		
-		days = input_day(NumOfDays);
+		day = input_day(NumOfDays);
 		
-		m_code = month_code(months);
-		what_day = find_day(years, m_code, days);
-		first = first_day(what_day, days);
+		m_code = month_code(month);
+		what_day = find_day(year, m_code, day);
+		first = first_day(what_day, day);
 		
-		print_month_year(years, months);
-		calendar(years, months, first, NumOfDays, days);
+		print_month_year(year, month);
+		calendar(year, montn, first, NumOfDays, day);
 		
 
 	}
