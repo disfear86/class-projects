@@ -28,17 +28,17 @@ void SetColor(int ForgC)
 //check year value
 int input_year()
 {
-	int etos;
+	int year;
 	while(1){
 		printf("\nEnter Year (1900-2099) or press 0 to exit: ");
-		scanf("%d",&etos);
-		if(etos == 0)
+		scanf("%d",&year);
+		if(year == 0)
 			break;
-		if(etos<1900 || etos>2099){
+		if(year<1700 || year>2299){
 			printf("Wrong value.");
 		}
-		if(etos>=1900 && etos<2099){
-			return etos;
+		if(year>=1700 && year<2300){
+			return year;
 		}	
 }
 }
@@ -252,7 +252,7 @@ main()
 	while(1)
 	{
 		year = input_year();
-		if(years == 0)
+		if(year == 0)
 			break;
 		
 		month = input_month();
